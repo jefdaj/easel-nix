@@ -6,10 +6,5 @@ stdenv.mkDerivation rec {
   src = ./.;
   nativeBuildInputs = [ autoreconfHook ];
   buildInputs = [ python3 ];
-#   builder = builtins.writeScript "builder.sh" ''
-#     autoconf
-#     ./configure
-#     make
-#     make check
-#   '';
+  doCheck = true;
 }
